@@ -2,16 +2,42 @@ package com.gds.pojo;
 
 import java.util.List;
 
-public class MobilePhone {
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Entity
+@Table(name="mobile")
+public class Mobile {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id")
 	private int product_id;
+	
+	@Column(name = "company")
 	private String comp;
+	
+	@Column(name = "model")
 	private String model;
+	
+	@Column(name = "cam_res")
 	private int cam_res;
+	
+	@Column(name = "colors")
 	private List<String> colors;
+	
+	@Column(name = "screen_size")
 	private Double screen_size;
+	
+	@Column(name = "os")
 	private String os;
-	public MobilePhone(int product_id, String comp, String model, int cam_res,
+	
+	
+	public Mobile(int product_id, String comp, String model, int cam_res,
 			List<String> colors, Double screen_size, String os) {
 		super();
 		this.product_id = product_id;
